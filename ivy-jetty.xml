@@ -1,10 +1,21 @@
 <ivy-module version="2.0">
 	<info organisation="org.eclipse" module="jetty" />
 	<dependencies>
-		<dependency org="org.eclipse.jetty" name="jetty-server"
-			rev="9.2.3.v20140905" />
+		<!-- servlet api -->
 		<dependency org="javax.servlet" name="javax.servlet-api"
 			rev="3.1.0" />
+
+		<!-- jetty runtime -->
+		<dependency org="org.eclipse.jetty" name="jetty-server"
+			rev="9.2.3.v20140905" />
 		<dependency org="org.eclipse.jetty" name="jetty-util" rev="9.2.3.v20140905" />
+		<dependency org="org.eclipse.jetty" name="jetty-webapp"
+			rev="9.2.3.v20140905" />
+		<dependency org="org.eclipse.jetty" name="jetty-servlet"
+			rev="9.2.3.v20140905" />
+		<dependency org="org.eclipse.jetty" name="jetty-security"
+			rev="9.2.3.v20140905" />
+		<dependency org="org.eclipse.jetty" name="jetty-http" rev="9.2.3.v20140905" />
+		<dependency org="org.eclipse.jetty" name="jetty-io" rev="9.2.3.v20140905" />
 	</dependencies>
 </ivy-module>
