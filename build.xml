@@ -6,13 +6,6 @@
 	</path>
 	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
 
-	<!--jetty task def-->
-	<!--<path id="jetty.plugin.classpath">
-		<fileset dir="jetty" includes="*.jar" />
-	</path>
-	<taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
-	-->
-
 	<!-- jetty task -->
 	<target name="jetty.run" depends="resolve-ant-dev">
 		<path id="jetty.plugin.classpath">
@@ -20,9 +13,12 @@
 			<fileset dir="ant-tasks" includes="*.jar" />
 		</path>
 		<taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
-		<jetty.run/>
+		<typedef name="webApp" classname="org.eclipse.jetty.ant.AntWebAppContext" classpathref="jetty.plugin.classpath" loaderref="jetty.loader" />
+		<!--jetty.run /-->
+		<jetty.run>
+			<webApp war="${basedir}/src/main/web" contextPath="/" />
+		</jetty.run>
 	</target>
-
 
 	<target name="clean" description="clean up">
 		<delete dir="ant-tasks" />

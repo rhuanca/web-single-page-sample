@@ -4,18 +4,13 @@
 		<!-- servlet api -->
 		<dependency org="javax.servlet" name="javax.servlet-api"
 			rev="3.1.0" />
+		<dependency org="javax.annotation" name="javax.annotation-api"
+			rev="1.2" />
 
 		<!-- jetty runtime -->
 		<dependency org="org.eclipse.jetty" name="jetty-server"
 			rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-util" rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-webapp"
-			rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-servlet"
-			rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-security"
-			rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-http" rev="9.2.3.v20140905" />
-		<dependency org="org.eclipse.jetty" name="jetty-io" rev="9.2.3.v20140905" />
+		<dependency org="org.ow2.asm" name="asm-all" rev="5.0.3" />
+
 	</dependencies>
 </ivy-module>
