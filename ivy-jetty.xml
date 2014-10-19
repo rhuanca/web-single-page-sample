@@ -11,6 +11,5 @@
 		<dependency org="org.eclipse.jetty" name="jetty-server"
 			rev="9.2.3.v20140905" />
 		<dependency org="org.ow2.asm" name="asm-all" rev="5.0.3" />
-
 	</dependencies>
 </ivy-module>
