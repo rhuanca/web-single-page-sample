@@ -7,8 +7,7 @@
 	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
 
 	<!--jetty task def-->
-	<!--
-	<path id="jetty.plugin.classpath">
+	<!--<path id="jetty.plugin.classpath">
 		<fileset dir="jetty" includes="*.jar" />
 	</path>
 	<taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
@@ -16,20 +15,29 @@
 
 	<!-- jetty task -->
 	<target name="jetty.run" depends="resolve-ant-dev">
-		<jetty />
+		<path id="jetty.plugin.classpath">
+			<fileset dir="jetty" includes="*.jar" />
+			<fileset dir="ant-tasks" includes="*.jar" />
+		</path>
+		<taskdef classpathref="jetty.plugin.classpath" resource="tasks.properties" loaderref="jetty.loader" />
+		<jetty.run/>
 	</target>
 
 
+	<target name="clean" description="clean up">
+		<delete dir="ant-tasks" />
+		<delete dir="jetty" />
+	</target>
 
 	<target name="resolve-ant-dev" description="--> retrieving jetty dependencies">
 		<!-- ant tasks -->
-		<ivy:resolve file="ivy-ant-task.xml" transitive="false"/>
-		<ivy:retrieve pattern="ant-tasks/[artifact]-[type]-[revision].[ext]"/>
+		<ivy:resolve file="ivy-ant-task.xml" transitive="false" />
+		<ivy:retrieve pattern="ant-tasks/[artifact]-[type]-[revision].[ext]" />
 
 		<!-- jetty -->
-		<ivy:resolve file="ivy-jetty.xml" transitive="false"/>
+		<ivy:resolve file="ivy-jetty.xml" transitive="false" />
 		<ivy:retrieve pattern="jetty/[artifact]-[type]-[revision].[ext]" conf="default" />
-		
+
 	</target>
 
 	<target name="resolve" description="--> retrieving jetty dependencies">
