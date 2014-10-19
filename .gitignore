@@ -4,3 +4,4 @@
 lib
 jetty
 bin
+/ant-tasks/

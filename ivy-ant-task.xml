@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+	<info organisation="org.eclipse" module="jetty" />
+	<dependencies>
+		<dependency org="org.eclipse.jetty" name="jetty-ant" rev="9.2.3.v20140905" />
+	</dependencies>
+</ivy-module>
